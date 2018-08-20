@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/view_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转到登录页面"
+            android:textSize="@dimen/text_size_20sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/girls_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="girls list"
+            android:orientation="vertical"
+            app:layoutManager="StaggeredGridLayoutManager"
+            app:spanCount="2" />
+
+        <!-- TODO: Update blank fragment layout -->
+    </LinearLayout>
+
+</LinearLayout>

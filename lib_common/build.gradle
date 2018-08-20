@@ -1,0 +1,150 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Support libraries
+    api deps.support.app_compat
+    api deps.support.v4
+    api deps.support.design
+    api deps.support.cardview
+    api deps.support.recyclerview
+
+    // Architecture components
+    api deps.lifecycle.runtime
+    api deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    api deps.room.runtime
+    annotationProcessor deps.room.compiler
+
+    //fresco
+    api 'com.facebook.fresco:fresco:1.5.0'
+    api "com.facebook.fresco:imagepipeline-okhttp3:1.5.0"
+
+    // butterknife
+    api deps.butterknife.runtime
+    annotationProcessor deps.butterknife.compiler
+
+    //http
+    api deps.retrofit.runtime
+    api deps.retrofit.gson
+    api deps.retrofit.adapter_rxjava2
+    api deps.okhttp.okhttp3
+    api deps.okhttp.okhttp3_logging_interceptor
+
+    // RxJava
+//    implementation deps.rxjava2
+    api deps.rx_android
+
+    //router
+    api deps.arouter.runtime
+    //logutils
+    api deps.logutils
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    // annotationProcessor deps.arouter.compiler
+    api deps.fragmentation
+    api deps.swipebacklayout
+    api deps.chuck
+    api deps.avi
+    api deps.logger
+    api deps.rxbinding
+
+
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            snapshotRepository(url: getsSnapshotUrl()) {
+                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+            }
+            repository(url: getReleaseUrl()) {
+                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+            }
+            pom.project {
+                version '1.0.0'
+                artifactId 'lib-common'
+                groupId getGroupId()
+                packaging getType()
+                description getDescription()
+            }
+        }
+    }
+}
+
+artifacts {
+    archives file('lib_common.aar')
+}
+repositories {
+    mavenCentral()
+}
+
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
+
+def getsSnapshotUrl() {
+    return hasProperty('MAVEN_REPO_SNAPSHOT_URL') ? MAVEN_REPO_SNAPSHOT_URL : ""
+}
+
+def getReleaseUrl() {
+    return hasProperty('MAVEN_REPO_RELEASE_URL') ? MAVEN_REPO_RELEASE_URL : ""
+}
+
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+
+def getGroupId() {
+    return hasProperty('GROUP_ID') ? GROUP_ID : ""
+}
+def getType() {
+    return hasProperty('TYPE') ? TYPE : ""
+}
+def getDescription() {
+    return hasProperty('DESCRIPTION') ? DESCRIPTION : ""
+}

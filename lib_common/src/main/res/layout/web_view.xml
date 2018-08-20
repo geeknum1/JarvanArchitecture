@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/view_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ActionBarHeight"
+        android:layout_above="@+id/fm_sy"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rv_commodity_tou"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#000000">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@mipmap/top_back" />
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#DBB864"
+                android:padding="3dp"
+                android:layout_toRightOf="@id/iv_back"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:text="@string/web_close"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="#DBB864"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        />
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.tencent.smtt.sdk.WebView>
+</LinearLayout>
