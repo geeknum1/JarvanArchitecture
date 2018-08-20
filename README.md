@@ -1,5 +1,4 @@
-# JarvanArchitecture
-借鉴 GoogleArchitectureDemo-master改造而来
+借鉴 GoogleArchitectureDemo-master改造而来，封装较为完善的组件化项目。
 主要架构以及语言 ：sophix+mvp+dagger2+rx全家桶+retrofit2+组件化通信arouter+kotlin
 
 lib_common : 公共库，主要有各种base，各种ui组件，自定义组件，公用的Activity、公用的Fragment，和公用的utils等等。
@@ -21,8 +20,8 @@ ARouter典型应用
 组件化编译和非组件化编译切换
 我们在工程根目录下的gradle.properties文件中加入一个Boolean类型的变量，通过修改这个变量来识别编译模式：
 
-# 每次更改“isModule”的值后，需要点击 "Sync Project" 按钮
-# isModule是“集成开发模式”和“组件开发模式”的切换开关
+每次更改“isModule”的值后，需要点击 "Sync Project" 按钮
+isModule是“集成开发模式”和“组件开发模式”的切换开关
 isModule=false
 然后在 module_girls和module_news中的build.gradle文件中支持切换：
 
