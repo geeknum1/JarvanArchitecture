@@ -29,7 +29,7 @@ public class FragmentGirls extends SimpleFragment {
     private String mParam2;
 
     public FragmentGirls() {
-        // Required empty public constructor
+        // Required empty public constructor///
     }
 
     /**
