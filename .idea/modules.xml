@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JarvanArchitectures.iml" filepath="$PROJECT_DIR$/JarvanArchitectures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JarvanArchitecture2.iml" filepath="$PROJECT_DIR$/.idea/JarvanArchitecture2.iml" />
+      <module fileurl="file://C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\JarvanArchitectures.iml" filepath="C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\JarvanArchitectures.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\app\app.iml" filepath="C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
+      <module fileurl="file://C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\lib_common\lib_common.iml" filepath="C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\lib_common\lib_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_girls/module_girls.iml" filepath="$PROJECT_DIR$/module_girls/module_girls.iml" />
+      <module fileurl="file://C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\module_girls\module_girls.iml" filepath="C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\module_girls\module_girls.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_news/module_news.iml" filepath="$PROJECT_DIR$/module_news/module_news.iml" />
+      <module fileurl="file://C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\module_news\module_news.iml" filepath="C:\Users\56987\AndroidStudioProjects\JarvanArchitecture2\module_news\module_news.iml" />
     </modules>
   </component>
 </project>
