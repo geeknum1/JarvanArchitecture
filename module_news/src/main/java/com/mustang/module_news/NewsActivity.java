@@ -83,10 +83,10 @@ public class NewsActivity extends RootActivity<LoginPresenter> implements LoginC
                     @Override
                     public void accept(Object o) throws Exception {
                       mPresenter.login(mName.getText().toString().trim(),mPwd.getText().toString().trim());
-                        ARouter.getInstance()
+                      /*  ARouter.getInstance()
                                 .build(ARouterPath.GirlsAty)
                                 .withString("params", "666")
-                                .navigation(mContext, 3);
+                                .navigation(mContext, 3);*/
                     }
                 }));
 

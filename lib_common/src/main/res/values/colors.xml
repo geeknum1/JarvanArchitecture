@@ -62,5 +62,6 @@
     <color name="gray_f6">#fff6f6f6</color>
     <color name="gray_fc">#fffcfcfc</color>
     <color name="gray_e0">#e0e0e0</color>
+    <color name="dialog_black">#cc000000</color>
 
 </resources>

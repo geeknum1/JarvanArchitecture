@@ -14,6 +14,7 @@ import com.mustang.lib_common.ProgressControlAble;
 import com.mustang.lib_common.ProgressEnum;
 import com.mustang.lib_common.R;
 import com.mustang.lib_common.event.InternetErrorEvent;
+import com.mustang.lib_common.utils.CommonLoadingDialog;
 import com.mustang.lib_common.utils.ProgressUtil;
 import com.mustang.lib_common.utils.ToastUtils;
 
@@ -44,7 +45,7 @@ public abstract class SimpleActivity extends SupportActivity implements BGASwipe
         setContentView(getLayout());
         eventListener = new EventListener();
         getLifecycle().addObserver(eventListener);
-        mProgressControlAble = new ProgressUtil(this);
+        mProgressControlAble = new CommonLoadingDialog(this,R.style.MyDialogStyle);
         mContext = this;
         mCompositeDisposable = new CompositeDisposable();
         BaseApplication.getInstance().addActivity(this);

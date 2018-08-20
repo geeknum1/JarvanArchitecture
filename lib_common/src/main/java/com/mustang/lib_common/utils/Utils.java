@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
@@ -111,6 +112,23 @@ public class Utils {
             throw new NullPointerException();
         }
         return obj;
+    }
+
+    /**
+     * 检查当前Activity是否finished
+     *
+     * @param context 上下文
+     * @return 结果
+     */
+    public static boolean activityFinished(Context context) {
+        if (context == null) {
+            return true;
+        }
+        if (Build.VERSION.SDK_INT >= 17) {
+            return context instanceof Activity && ((Activity) context).isDestroyed();
+        } else {
+            return context instanceof Activity && ((Activity) context).isFinishing();
+        }
     }
 
 }
